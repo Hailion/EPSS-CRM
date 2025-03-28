@@ -1,0 +1,4 @@
+Facility ID,Name,Region,Hub,Woreda,Zone,Level,Credit Invoice Number,Credit Balance,Status,Credit Date,Due Date
+HF001,Central Hospital,Addis Ababa,Central Hub,Addis Ketema,Central Zone,Hospital,INV001,50000,active,2024-03-20,2024-04-20
+HF002,Health Center,Addis Ababa,Central Hub,Bole,Central Zone,Health Center,INV002,25000,active,2024-03-20,2024-04-20
+HF003,Clinic,Addis Ababa,Central Hub,Yeka,Central Zone,Clinic,INV003,10000,active,2024-03-20,2024-04-20 

@@ -1,0 +1,93 @@
+/* Dark theme variables */
+:root[data-theme='dark'] {
+  --bg-primary: #1a1b1e;
+  --bg-secondary: #2c2d30;
+  --text-primary: #e4e6eb;
+  --text-secondary: #b0b3b8;
+  --border-color: #3e4042;
+  --hover-bg: #3a3b3d;
+  --card-bg: #242526;
+  --input-bg: #3a3b3d;
+  --input-text: #e4e6eb;
+  --link-color: #4395ff;
+  --link-hover: #5fa9ff;
+  --primary-gradient: linear-gradient(135deg, #2c3e50, #3498db);
+  --success-color: #00b894;
+  --warning-color: #fdcb6e;
+  --danger-color: #ff7675;
+}
+
+/* Dark theme styles */
+[data-theme='dark'] body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+[data-theme='dark'] .card {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+[data-theme='dark'] .nav-link {
+  color: var(--text-primary);
+}
+
+[data-theme='dark'] .nav-link:hover {
+  background-color: var(--hover-bg);
+  color: var(--link-hover);
+}
+
+[data-theme='dark'] input,
+[data-theme='dark'] select,
+[data-theme='dark'] textarea {
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border-color: var(--border-color);
+}
+
+[data-theme='dark'] .table {
+  color: var(--text-primary);
+}
+
+[data-theme='dark'] .table th {
+  background-color: var(--bg-secondary);
+}
+
+[data-theme='dark'] .table tr:hover {
+  background-color: var(--hover-bg);
+}
+
+[data-theme='dark'] .btn {
+  border-color: var(--border-color);
+}
+
+[data-theme='dark'] .btn:hover {
+  background-color: var(--hover-bg);
+}
+
+[data-theme='dark'] .dropdown-menu {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+[data-theme='dark'] .dropdown-item {
+  color: var(--text-primary);
+}
+
+[data-theme='dark'] .dropdown-item:hover {
+  background-color: var(--hover-bg);
+  color: var(--link-hover);
+}
+
+/* Status badges */
+[data-theme='dark'] .badge-success {
+  background-color: var(--success-color);
+}
+
+[data-theme='dark'] .badge-warning {
+  background-color: var(--warning-color);
+}
+
+[data-theme='dark'] .badge-danger {
+  background-color: var(--danger-color);
+}
