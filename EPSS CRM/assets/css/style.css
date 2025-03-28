@@ -502,7 +502,8 @@ footer {
 /* Dashboard Stats */
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  /* grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); */
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   margin-bottom: 30px;
 }
@@ -603,6 +604,16 @@ footer {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
   padding: 20px;
   margin-bottom: 30px;
+}
+.card th {
+  background: #f8f9fa;
+  padding: 1.2rem;
+  font-weight: 600;
+}
+
+.card td {
+  padding: 1.2rem;
+  border-bottom: 1px solid #eee;
 }
 
 /* Enhanced Customer Info Styles */

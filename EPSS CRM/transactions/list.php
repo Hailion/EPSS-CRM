@@ -44,14 +44,14 @@ require_once '../includes/header.php';
 <div class="view-container">
   <!-- Page Header with Summary Stats -->
   <div class="page-header"
-    style="background: linear-gradient(135deg, #2196F3, #1976D2); color: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-    <div class="header-content">
+    style="background:  linear-gradient(135deg, #06292b 0%, #3c3d3d 100%); color: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    <div class="header-content" style="display: flex; flex-direction: column;">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
         <div>
           <h2 style="margin: 0; font-size: 1.8rem; display: flex; align-items: center; gap: 0.5rem;">
-          <i class="fas fa-list"></i>
-          <?php echo t('transactions'); ?>
-        </h2>
+            <i class="fas fa-list"></i>
+            <?php echo t('transactions'); ?>
+          </h2>
           <p style="margin: 0.5rem 0 0; opacity: 0.9; font-size: 0.95rem;">
             Manage and track all credit transactions and payments
           </p>
@@ -67,48 +67,57 @@ require_once '../includes/header.php';
       </div>
 
       <!-- Summary Statistics Cards -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem;">
-        <div class="stat-card" style="background: rgba(255, 255, 255, 0.1); padding: 1.25rem; border-radius: 8px; backdrop-filter: blur(5px);">
+      <div
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; width:100%">
+        <div class=" stat-card"
+          style="background: rgba(255, 255, 255, 0.1); padding: 1.25rem; border-radius: 8px; backdrop-filter: blur(5px);">
           <div style="display: flex; align-items: center; gap: 1rem;">
-            <div style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+            <div
+              style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
               <i class="fas fa-money-bill-wave" style="font-size: 1.5rem;"></i>
             </div>
             <div>
-          <div style="font-size: 0.9rem; opacity: 0.9;">Total Credit</div>
-          <div style="font-size: 1.4rem; font-weight: 600;"><?php echo format_currency($total_credit); ?></div>
+              <div style="font-size: 0.9rem; opacity: 0.9;">Total Credit</div>
+              <div style="font-size: 1.4rem; font-weight: 600;"><?php echo format_currency($total_credit); ?></div>
             </div>
           </div>
         </div>
-        <div class="stat-card" style="background: rgba(255, 255, 255, 0.1); padding: 1.25rem; border-radius: 8px; backdrop-filter: blur(5px);">
+        <div class="stat-card"
+          style="background: rgba(255, 255, 255, 0.1); padding: 1.25rem; border-radius: 8px; backdrop-filter: blur(5px);">
           <div style="display: flex; align-items: center; gap: 1rem;">
-            <div style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+            <div
+              style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
               <i class="fas fa-check-circle" style="font-size: 1.5rem;"></i>
             </div>
             <div>
-          <div style="font-size: 0.9rem; opacity: 0.9;">Total Paid</div>
-          <div style="font-size: 1.4rem; font-weight: 600;"><?php echo format_currency($total_paid); ?></div>
+              <div style="font-size: 0.9rem; opacity: 0.9;">Total Paid</div>
+              <div style="font-size: 1.4rem; font-weight: 600;"><?php echo format_currency($total_paid); ?></div>
             </div>
           </div>
         </div>
-        <div class="stat-card" style="background: rgba(255, 255, 255, 0.1); padding: 1.25rem; border-radius: 8px; backdrop-filter: blur(5px);">
+        <div class="stat-card"
+          style="background: rgba(255, 255, 255, 0.1); padding: 1.25rem; border-radius: 8px; backdrop-filter: blur(5px);">
           <div style="display: flex; align-items: center; gap: 1rem;">
-            <div style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+            <div
+              style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
               <i class="fas fa-balance-scale" style="font-size: 1.5rem;"></i>
             </div>
             <div>
-          <div style="font-size: 0.9rem; opacity: 0.9;">Outstanding Balance</div>
-          <div style="font-size: 1.4rem; font-weight: 600;"><?php echo format_currency($total_remaining); ?></div>
+              <div style="font-size: 0.9rem; opacity: 0.9;">Outstanding Balance</div>
+              <div style="font-size: 1.4rem; font-weight: 600;"><?php echo format_currency($total_remaining); ?></div>
             </div>
           </div>
         </div>
-        <div class="stat-card" style="background: rgba(255, 255, 255, 0.1); padding: 1.25rem; border-radius: 8px; backdrop-filter: blur(5px);">
+        <div class="stat-card"
+          style="background: rgba(255, 255, 255, 0.1); padding: 1.25rem; border-radius: 8px; backdrop-filter: blur(5px);">
           <div style="display: flex; align-items: center; gap: 1rem;">
-            <div style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+            <div
+              style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
               <i class="fas fa-exclamation-triangle" style="font-size: 1.5rem;"></i>
             </div>
             <div>
-          <div style="font-size: 0.9rem; opacity: 0.9;">Overdue Credits</div>
-          <div style="font-size: 1.4rem; font-weight: 600;"><?php echo $overdue_count; ?></div>
+              <div style="font-size: 0.9rem; opacity: 0.9;">Overdue Credits</div>
+              <div style="font-size: 1.4rem; font-weight: 600;"><?php echo $overdue_count; ?></div>
             </div>
           </div>
         </div>
@@ -117,13 +126,15 @@ require_once '../includes/header.php';
   </div>
 
   <!-- Quick Actions Bar -->
-  <div style="background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  <div
+    style="background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
     <div style="display: flex; justify-content: space-between; align-items: center;">
       <div style="display: flex; gap: 1rem;">
         <button onclick="showOverdueReport()" class="btn btn-outline-danger" style="position: relative;">
           <i class="fas fa-file-alt"></i> Overdue Report
           <?php if ($overdue_count > 0): ?>
-          <span class="badge" style="position: absolute; top: -8px; right: -8px; background: #dc3545; color: white; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem;">
+          <span class="badge"
+            style="position: absolute; top: -8px; right: -8px; background: #dc3545; color: white; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem;">
             <?php echo $overdue_count; ?>
           </span>
           <?php endif; ?>
@@ -145,9 +156,12 @@ require_once '../includes/header.php';
 
   <!-- Modals -->
   <!-- Overdue Report Modal -->
-  <div id="overdueReportModal" class="modal" style="display: none; position: fixed; top: 70px; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;">
-    <div class="modal-content" style="background: white; width: 90%; max-width: 800px; margin: 2rem auto; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-      <div style="padding: 1.5rem; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
+  <div id="overdueReportModal" class="modal"
+    style="display: none; position: fixed; top: 70px; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;">
+    <div class="modal-content"
+      style="background: white; width: 90%; max-width: 800px; margin: 2rem auto; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+      <div
+        style="padding: 1.5rem; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
         <h3 style="margin: 0; font-size: 1.2rem; color: #dc3545;">
           <i class="fas fa-exclamation-triangle"></i> Overdue Report
         </h3>
@@ -156,8 +170,10 @@ require_once '../includes/header.php';
         </button>
       </div>
       <div style="padding: 1.5rem; max-height: 70vh; overflow-y: auto;">
-        <div class="overdue-summary" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
-          <div class="stat-card" style="background: #fff5f5; padding: 1rem; border-radius: 8px; border: 1px solid #ffebee;">
+        <div class="overdue-summary"
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+          <div class="stat-card"
+            style="background: #fff5f5; padding: 1rem; border-radius: 8px; border: 1px solid #ffebee;">
             <div style="font-size: 0.9rem; color: #dc3545;">Total Overdue Amount</div>
             <div style="font-size: 1.4rem; font-weight: 600; color: #dc3545;">
               <?php 
@@ -168,7 +184,8 @@ require_once '../includes/header.php';
               ?>
             </div>
           </div>
-          <div class="stat-card" style="background: #fff5f5; padding: 1rem; border-radius: 8px; border: 1px solid #ffebee;">
+          <div class="stat-card"
+            style="background: #fff5f5; padding: 1rem; border-radius: 8px; border: 1px solid #ffebee;">
             <div style="font-size: 0.9rem; color: #dc3545;">Average Days Overdue</div>
             <div style="font-size: 1.4rem; font-weight: 600; color: #dc3545;">
               <?php 
@@ -186,30 +203,34 @@ require_once '../includes/header.php';
           <h4 style="margin-bottom: 1rem;">Overdue Transactions</h4>
           <div style="display: grid; gap: 1rem;">
             <?php foreach ($transactions as $transaction): ?>
-              <?php if ($transaction['days_overdue'] > 0 && $transaction['remaining_amount'] > 0): ?>
-              <div class="overdue-item" style="background: #fff; border: 1px solid #ffebee; border-radius: 8px; padding: 1rem;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                  <div style="font-weight: 500;"><?php echo htmlspecialchars($transaction['customer_name']); ?></div>
-                  <span class="badge badge-danger" style="background: #ffebee; color: #dc3545; padding: 0.25rem 0.5rem; border-radius: 12px;">
-                    <?php echo $transaction['days_overdue']; ?> days overdue
-                  </span>
+            <?php if ($transaction['days_overdue'] > 0 && $transaction['remaining_amount'] > 0): ?>
+            <div class="overdue-item"
+              style="background: #fff; border: 1px solid #ffebee; border-radius: 8px; padding: 1rem;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <div style="font-weight: 500;"><?php echo htmlspecialchars($transaction['customer_name']); ?></div>
+                <span class="badge badge-danger"
+                  style="background: #ffebee; color: #dc3545; padding: 0.25rem 0.5rem; border-radius: 12px;">
+                  <?php echo $transaction['days_overdue']; ?> days overdue
+                </span>
+              </div>
+              <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; font-size: 0.9rem;">
+                <div>
+                  <div style="color: #666;">Amount</div>
+                  <div style="font-weight: 500;"><?php echo format_currency($transaction['remaining_amount']); ?></div>
                 </div>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; font-size: 0.9rem;">
-                  <div>
-                    <div style="color: #666;">Amount</div>
-                    <div style="font-weight: 500;"><?php echo format_currency($transaction['remaining_amount']); ?></div>
+                <div>
+                  <div style="color: #666;">Due Date</div>
+                  <div style="font-weight: 500;"><?php echo date('M d, Y', strtotime($transaction['due_date'])); ?>
                   </div>
-                  <div>
-                    <div style="color: #666;">Due Date</div>
-                    <div style="font-weight: 500;"><?php echo date('M d, Y', strtotime($transaction['due_date'])); ?></div>
-                  </div>
-                  <div>
-                    <div style="color: #666;">Location</div>
-                    <div style="font-weight: 500;"><?php echo htmlspecialchars($transaction['region']); ?></div>
-                  </div>
+                </div>
+                <div>
+                  <div style="color: #666;">Location</div>
+                  <div style="font-weight: 500;"><?php echo htmlspecialchars($transaction['region']); ?></div>
                 </div>
               </div>
-              <?php endif; ?>
+            </div>
+            <?php endif; ?>
             <?php endforeach; ?>
           </div>
         </div>
@@ -218,9 +239,12 @@ require_once '../includes/header.php';
   </div>
 
   <!-- Payment History Modal -->
-  <div id="paymentHistoryModal" class="modal" style="display: none; position: fixed; top: 70px; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;">
-    <div class="modal-content" style="background: white; width: 90%; max-width: 800px; margin: 2rem auto; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-      <div style="padding: 1.5rem; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
+  <div id="paymentHistoryModal" class="modal"
+    style="display: none; position: fixed; top: 70px; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;">
+    <div class="modal-content"
+      style="background: white; width: 90%; max-width: 800px; margin: 2rem auto; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+      <div
+        style="padding: 1.5rem; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
         <h3 style="margin: 0; font-size: 1.2rem; color: #2196F3;">
           <i class="fas fa-history"></i> Payment History
         </h3>
@@ -229,14 +253,17 @@ require_once '../includes/header.php';
         </button>
       </div>
       <div style="padding: 1.5rem; max-height: 70vh; overflow-y: auto;">
-        <div class="payment-summary" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
-          <div class="stat-card" style="background: #e3f2fd; padding: 1rem; border-radius: 8px; border: 1px solid #bbdefb;">
+        <div class="payment-summary"
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+          <div class="stat-card"
+            style="background: #e3f2fd; padding: 1rem; border-radius: 8px; border: 1px solid #bbdefb;">
             <div style="font-size: 0.9rem; color: #1565C0;">Total Payments</div>
             <div style="font-size: 1.4rem; font-weight: 600; color: #1565C0;">
               <?php echo format_currency($total_paid); ?>
             </div>
           </div>
-          <div class="stat-card" style="background: #e3f2fd; padding: 1rem; border-radius: 8px; border: 1px solid #bbdefb;">
+          <div class="stat-card"
+            style="background: #e3f2fd; padding: 1rem; border-radius: 8px; border: 1px solid #bbdefb;">
             <div style="font-size: 0.9rem; color: #1565C0;">Average Payment</div>
             <div style="font-size: 1.4rem; font-weight: 600; color: #1565C0;">
               <?php 
@@ -262,14 +289,17 @@ require_once '../includes/header.php';
             $recent_payments = $stmt->fetchAll(PDO::FETCH_ASSOC);
             foreach ($recent_payments as $payment):
             ?>
-            <div class="payment-item" style="background: #fff; border: 1px solid #e3f2fd; border-radius: 8px; padding: 1rem;">
+            <div class="payment-item"
+              style="background: #fff; border: 1px solid #e3f2fd; border-radius: 8px; padding: 1rem;">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
                 <div style="font-weight: 500;"><?php echo htmlspecialchars($payment['customer_name']); ?></div>
-                <span class="badge badge-primary" style="background: #e3f2fd; color: #1565C0; padding: 0.25rem 0.5rem; border-radius: 12px;">
+                <span class="badge badge-primary"
+                  style="background: #e3f2fd; color: #1565C0; padding: 0.25rem 0.5rem; border-radius: 12px;">
                   <?php echo date('M d, Y', strtotime($payment['created_at'])); ?>
                 </span>
               </div>
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; font-size: 0.9rem;">
+              <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; font-size: 0.9rem;">
                 <div>
                   <div style="color: #666;">Amount</div>
                   <div style="font-weight: 500;"><?php echo format_currency($payment['amount']); ?></div>
@@ -292,9 +322,12 @@ require_once '../includes/header.php';
   </div>
 
   <!-- Analytics Modal -->
-  <div id="analyticsModal" class="modal" style="display: none; position: fixed; top: 70px; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;">
-    <div class="modal-content" style="background: white; width: 90%; max-width: 800px; margin: 2rem auto; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-      <div style="padding: 1.5rem; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
+  <div id="analyticsModal" class="modal"
+    style="display: none; position: fixed; top: 70px; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;">
+    <div class="modal-content"
+      style="background: white; width: 90%; max-width: 800px; margin: 2rem auto; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+      <div
+        style="padding: 1.5rem; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
         <h3 style="margin: 0; font-size: 1.2rem; color: #4CAF50;">
           <i class="fas fa-chart-bar"></i> Analytics
         </h3>
@@ -303,8 +336,10 @@ require_once '../includes/header.php';
         </button>
       </div>
       <div style="padding: 1.5rem; max-height: 70vh; overflow-y: auto;">
-        <div class="analytics-summary" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
-          <div class="stat-card" style="background: #e8f5e9; padding: 1rem; border-radius: 8px; border: 1px solid #c8e6c9;">
+        <div class="analytics-summary"
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+          <div class="stat-card"
+            style="background: #e8f5e9; padding: 1rem; border-radius: 8px; border: 1px solid #c8e6c9;">
             <div style="font-size: 0.9rem; color: #2E7D32;">Collection Rate</div>
             <div style="font-size: 1.4rem; font-weight: 600; color: #2E7D32;">
               <?php 
@@ -313,7 +348,8 @@ require_once '../includes/header.php';
               ?>%
             </div>
           </div>
-          <div class="stat-card" style="background: #e8f5e9; padding: 1rem; border-radius: 8px; border: 1px solid #c8e6c9;">
+          <div class="stat-card"
+            style="background: #e8f5e9; padding: 1rem; border-radius: 8px; border: 1px solid #c8e6c9;">
             <div style="font-size: 0.9rem; color: #2E7D32;">Average Credit Term</div>
             <div style="font-size: 1.4rem; font-weight: 600; color: #2E7D32;">
               <?php 
@@ -341,14 +377,16 @@ require_once '../includes/header.php';
   <div class="content-card" style="background: white; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
     <!-- Advanced Filters Panel -->
     <div id="advancedFilters" class="advanced-filters" style="padding: 1.5rem; border-bottom: 1px solid #eee;">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+      <div
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
         <!-- Search Box -->
         <div class="filter-group">
           <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Search</label>
           <div style="position: relative;">
-          <input type="text" id="searchInput" placeholder="Search transactions..."
+            <input type="text" id="searchInput" placeholder="Search transactions..."
               style="width: 100%; padding: 0.5rem 1rem; padding-left: 2.5rem; border: 1px solid #ddd; border-radius: 6px;">
-            <i class="fas fa-search" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: #666;"></i>
+            <i class="fas fa-search"
+              style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: #666;"></i>
           </div>
         </div>
 
@@ -368,9 +406,9 @@ require_once '../includes/header.php';
         <div class="filter-group">
           <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Amount Range</label>
           <div style="display: flex; gap: 0.5rem;">
-            <input type="number" id="minAmount" placeholder="Min" 
+            <input type="number" id="minAmount" placeholder="Min"
               style="flex: 1; padding: 0.5rem; border: 1px solid #ddd; border-radius: 6px;">
-            <input type="number" id="maxAmount" placeholder="Max" 
+            <input type="number" id="maxAmount" placeholder="Max"
               style="flex: 1; padding: 0.5rem; border: 1px solid #ddd; border-radius: 6px;">
           </div>
         </div>
@@ -379,9 +417,9 @@ require_once '../includes/header.php';
         <div class="filter-group">
           <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Date Range</label>
           <div style="display: flex; gap: 0.5rem;">
-            <input type="date" id="startDate" 
+            <input type="date" id="startDate"
               style="flex: 1; padding: 0.5rem; border: 1px solid #ddd; border-radius: 6px;">
-            <input type="date" id="endDate" 
+            <input type="date" id="endDate"
               style="flex: 1; padding: 0.5rem; border: 1px solid #ddd; border-radius: 6px;">
           </div>
         </div>
@@ -635,7 +673,7 @@ require_once '../includes/header.php';
 
 .page-header:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .stat-card {
@@ -731,7 +769,7 @@ require_once '../includes/header.php';
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 /* Enhanced Progress Bar */
@@ -741,13 +779,13 @@ require_once '../includes/header.php';
   border-radius: 3px;
   overflow: hidden;
   margin-top: 0.5rem;
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .progress-value {
   height: 100%;
   transition: width 0.3s ease;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* Enhanced Filter Styles */
@@ -767,16 +805,16 @@ require_once '../includes/header.php';
   .view-container {
     padding: 1rem;
   }
-  
+
   .header-actions {
     flex-direction: column;
     gap: 0.5rem;
   }
-  
+
   .advanced-filters {
     padding: 1rem;
   }
-  
+
   .filter-group {
     margin-bottom: 0.5rem;
   }
@@ -794,7 +832,7 @@ require_once '../includes/header.php';
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 9999;
 }
 
@@ -804,20 +842,32 @@ require_once '../includes/header.php';
   max-width: 800px;
   margin: 2rem auto;
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   animation: slideIn 0.3s ease;
   position: relative;
   z-index: 10000;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideIn {
-  from { transform: translateY(-20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .btn-link {
@@ -842,7 +892,7 @@ require_once '../includes/header.php';
 
 .stat-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Badge Styles */
@@ -912,7 +962,7 @@ function resetFilters() {
   document.getElementById('regionFilter').value = '';
   document.getElementById('zoneFilter').value = '';
   document.getElementById('levelFilter').value = '';
-  
+
   currentFilters = {
     search: '',
     status: 'all',
@@ -936,20 +986,23 @@ function filterTransactions() {
     const rowStatus = row.dataset.status;
     const amount = parseFloat(row.querySelector('td:nth-child(3)').textContent.replace(/[^0-9.-]/g, ''));
     const createdDate = row.querySelector('td:nth-child(5)').textContent;
-    
+
     // Apply all filters
     const matchesSearch = text.includes(currentFilters.search);
     const matchesStatus = currentFilters.status === 'all' || rowStatus === currentFilters.status;
     const matchesAmount = (!currentFilters.minAmount || amount >= parseFloat(currentFilters.minAmount)) &&
-                         (!currentFilters.maxAmount || amount <= parseFloat(currentFilters.maxAmount));
+      (!currentFilters.maxAmount || amount <= parseFloat(currentFilters.maxAmount));
     const matchesDate = (!currentFilters.startDate || createdDate >= currentFilters.startDate) &&
-                       (!currentFilters.endDate || createdDate <= currentFilters.endDate);
-    const matchesRegion = !currentFilters.region || row.querySelector('td:nth-child(2)').textContent.includes(currentFilters.region);
-    const matchesZone = !currentFilters.zone || row.querySelector('td:nth-child(2)').textContent.includes(currentFilters.zone);
-    const matchesLevel = !currentFilters.level || row.querySelector('td:nth-child(2)').textContent.includes(currentFilters.level);
-    
-    row.style.display = matchesSearch && matchesStatus && matchesAmount && matchesDate && 
-                       matchesRegion && matchesZone && matchesLevel ? '' : 'none';
+      (!currentFilters.endDate || createdDate <= currentFilters.endDate);
+    const matchesRegion = !currentFilters.region || row.querySelector('td:nth-child(2)').textContent.includes(
+      currentFilters.region);
+    const matchesZone = !currentFilters.zone || row.querySelector('td:nth-child(2)').textContent.includes(
+      currentFilters.zone);
+    const matchesLevel = !currentFilters.level || row.querySelector('td:nth-child(2)').textContent.includes(
+      currentFilters.level);
+
+    row.style.display = matchesSearch && matchesStatus && matchesAmount && matchesDate &&
+      matchesRegion && matchesZone && matchesLevel ? '' : 'none';
   });
 }
 
@@ -1027,7 +1080,7 @@ function initializeCharts() {
 
 // Add smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
+  anchor.addEventListener('click', function(e) {
     e.preventDefault();
     document.querySelector(this.getAttribute('href')).scrollIntoView({
       behavior: 'smooth'
@@ -1081,28 +1134,28 @@ function exportTransactions() {
 }
 
 function toggleFilters() {
-    const filtersPanel = document.getElementById('advancedFilters');
-    const isVisible = filtersPanel.style.display !== 'none';
-    filtersPanel.style.display = isVisible ? 'none' : 'block';
-    
-    // Update button text and icon
-    const button = document.querySelector('.btn-outline-secondary');
-    const icon = button.querySelector('i');
-    if (isVisible) {
-        button.innerHTML = '<i class="fas fa-sliders-h"></i> Show Filters';
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-sliders-h');
-    } else {
-        button.innerHTML = '<i class="fas fa-times"></i> Hide Filters';
-        icon.classList.remove('fa-sliders-h');
-        icon.classList.add('fa-times');
-    }
+  const filtersPanel = document.getElementById('advancedFilters');
+  const isVisible = filtersPanel.style.display !== 'none';
+  filtersPanel.style.display = isVisible ? 'none' : 'block';
+
+  // Update button text and icon
+  const button = document.querySelector('.btn-outline-secondary');
+  const icon = button.querySelector('i');
+  if (isVisible) {
+    button.innerHTML = '<i class="fas fa-sliders-h"></i> Show Filters';
+    icon.classList.remove('fa-times');
+    icon.classList.add('fa-sliders-h');
+  } else {
+    button.innerHTML = '<i class="fas fa-times"></i> Hide Filters';
+    icon.classList.remove('fa-sliders-h');
+    icon.classList.add('fa-times');
+  }
 }
 
 // Initialize filters panel visibility
 document.addEventListener('DOMContentLoaded', function() {
-    const filtersPanel = document.getElementById('advancedFilters');
-    filtersPanel.style.display = 'none'; // Hide filters by default
+  const filtersPanel = document.getElementById('advancedFilters');
+  filtersPanel.style.display = 'none'; // Hide filters by default
 });
 </script>
 

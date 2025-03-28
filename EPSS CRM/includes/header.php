@@ -35,7 +35,7 @@ $base_url = '../';
     <div class="header-content">
       <div class="logo">
         <i class="fas fa-credit-card"></i>
-        <h1>Credit Management</h1>
+        <h1>EPSS CRM</h1>
       </div>
 
       <button class="mobile-menu-btn">

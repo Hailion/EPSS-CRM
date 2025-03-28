@@ -153,7 +153,7 @@ echo " -->";
   }
 
   .welcome-section {
-    background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%);
+    background: linear-gradient(135deg, #06292b 0%, #3c3d3d 100%);
     color: white;
     padding: 2.5rem;
     border-radius: 20px;
@@ -194,18 +194,19 @@ echo " -->";
 
   .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     margin-bottom: 2rem;
   }
 
   .stat-card {
     background: white;
-    padding: 1.8rem;
+    padding: 3rem 1.8rem;
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
     border: 1px solid rgba(0, 0, 0, 0.05);
+    text-transform: capitalize;
   }
 
   .stat-card:hover {
@@ -548,18 +549,18 @@ echo " -->";
 
     <!-- Quick Actions -->
     <div class="quick-actions">
-      <h2><?php echo t('quick_actions'); ?></h2>
+      <h2><?php echo t('Quick Actions'); ?></h2>
       <div class="action-buttons">
-        <a href="../customers/register.php" class="btn btn-primary"><?php echo t('register_new_customer'); ?></a>
-        <a href="../transactions/add_credit.php" class="btn btn-success"><?php echo t('add_new_credit'); ?></a>
-        <a href="../transactions/add_payment.php" class="btn btn-info"><?php echo t('record_payment'); ?></a>
-        <a href="../reports/index.php" class="btn btn-secondary"><?php echo t('view_reports'); ?></a>
+        <a href="../customers/register.php" class="btn btn-primary"><?php echo t('Add New Customer'); ?></a>
+        <a href="../transactions/add_credit.php" class="btn btn-success"><?php echo t('Add New Credit'); ?></a>
+        <a href="../transactions/add_payment.php" class="btn btn-info"><?php echo t('Record Payment'); ?></a>
+        <a href="../reports/index.php" class="btn btn-secondary"><?php echo t('View Reports'); ?></a>
       </div>
     </div>
 
     <!-- Recent Transactions -->
     <div class="card">
-      <h2><?php echo t('recent_transactions'); ?></h2>
+      <h2><?php echo t('Recent Transactions'); ?></h2>
       <table>
         <thead>
           <tr>

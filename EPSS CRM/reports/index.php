@@ -207,7 +207,7 @@ if (isset($_GET['export'])) {
 $page_title = t('reports');
 require_once '../includes/header.php';
 ?>
-
+<link rel="stylesheet" href="../assets/css/style.css">
 <div class="container">
   <!-- Dashboard Header with Quick Actions -->
   <div class="dashboard-header">
@@ -422,62 +422,62 @@ require_once '../includes/header.php';
     <div class="content-grid">
       <!-- Monthly Credit Trends -->
       <div class="card trend-card">
-      <div class="card-header">
+        <div class="card-header">
           <h3>Monthly Credit Trends</h3>
-        <div class="card-actions">
+          <div class="card-actions">
             <select id="trendPeriod" class="form-select">
               <option value="6">Last 6 Months</option>
               <option value="12">Last 12 Months</option>
               <option value="24">Last 24 Months</option>
-          </select>
+            </select>
+          </div>
         </div>
-      </div>
         <div class="card-body">
           <div class="chart-container">
             <canvas id="monthlyTrendChart"></canvas>
-            </div>
           </div>
-          </div>
+        </div>
+      </div>
 
       <!-- Performance Metrics -->
       <div class="card metrics-card">
         <div class="card-header">
           <h3>Performance Metrics</h3>
-          </div>
+        </div>
         <div class="card-body">
           <div class="metrics-grid">
             <div class="metric-item">
-          <div class="metric-header">
+              <div class="metric-header">
                 <span class="metric-label">Payment Rate</span>
                 <span class="metric-value">80%</span>
-            </div>
+              </div>
               <div class="mini-chart-container">
                 <canvas id="paymentRateChart"></canvas>
-          </div>
-          </div>
+              </div>
+            </div>
             <div class="metric-item">
               <div class="metric-header">
                 <span class="metric-label">Collection Rate</span>
                 <span class="metric-value">90%</span>
               </div>
               <div class="mini-chart-container">
-            <canvas id="collectionRateChart"></canvas>
-          </div>
-        </div>
+                <canvas id="collectionRateChart"></canvas>
+              </div>
+            </div>
             <div class="metric-item">
-          <div class="metric-header">
+              <div class="metric-header">
                 <span class="metric-label">Risk Score</span>
                 <span class="metric-value">15%</span>
-            </div>
+              </div>
               <div class="mini-chart-container">
-            <canvas id="riskScoreChart"></canvas>
+                <canvas id="riskScoreChart"></canvas>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- Recent Transactions -->
+      <!-- Recent Transactions -->
       <div class="card transactions-card">
         <div class="card-header">
           <h3>Recent Transactions</h3>
@@ -486,20 +486,20 @@ require_once '../includes/header.php';
           </a>
         </div>
         <div class="card-body">
-    <div class="table-responsive">
+          <div class="table-responsive">
             <table class="table">
-        <thead>
-          <tr>
-            <th>Date</th>
+              <thead>
+                <tr>
+                  <th>Date</th>
                   <th>Customer</th>
                   <th>Type</th>
                   <th>Amount</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php foreach ($recent_transactions as $transaction): ?>
-          <tr>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach ($recent_transactions as $transaction): ?>
+                <tr>
                   <td><?php echo date('M d, Y', strtotime($transaction['created_at'])); ?></td>
                   <td><?php echo htmlspecialchars($transaction['customer_name']); ?></td>
                   <td><?php echo ucfirst($transaction['type']); ?></td>
@@ -507,17 +507,17 @@ require_once '../includes/header.php';
                   <td>
                     <span class="status-badge <?php echo strtolower($transaction['status']); ?>">
                       <?php echo ucfirst($transaction['status']); ?>
-              </span>
-            </td>
-          </tr>
-          <?php endforeach; ?>
-        </tbody>
-      </table>
+                    </span>
+                  </td>
+                </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
           </div>
-    </div>
-  </div>
+        </div>
+      </div>
 
-  <!-- Top Customers -->
+      <!-- Top Customers -->
       <div class="card customers-card">
         <div class="card-header">
           <h3>Top Customers</h3>
@@ -526,24 +526,24 @@ require_once '../includes/header.php';
           </a>
         </div>
         <div class="card-body">
-    <div class="table-responsive">
+          <div class="table-responsive">
             <table class="table">
-        <thead>
-          <tr>
+              <thead>
+                <tr>
                   <th>Customer</th>
                   <th>Total Credit</th>
                   <th>Balance</th>
                   <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php foreach ($top_customers as $customer): ?>
-          <tr>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach ($top_customers as $customer): ?>
+                <tr>
                   <td><?php echo htmlspecialchars($customer['name']); ?></td>
                   <td>ETB <?php echo number_format($customer['total_credit'], 2); ?></td>
                   <td>ETB <?php echo number_format($customer['total_paid'], 2); ?></td>
-            <td>
-              <?php
+                  <td>
+                    <?php
                     // Calculate status based on payment information
                     $status = 'pending';
                     if ($customer['total_credit'] > 0) {
@@ -558,16 +558,16 @@ require_once '../includes/header.php';
                     ?>
                     <span class="status-badge <?php echo strtolower($status); ?>">
                       <?php echo ucfirst($status); ?>
-              </span>
-            </td>
-          </tr>
-          <?php endforeach; ?>
-        </tbody>
-      </table>
+                    </span>
+                  </td>
+                </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-    </div>
-                </div>
   </div>
 </div>
 
@@ -589,12 +589,13 @@ require_once '../includes/header.php';
 .container {
   max-width: 1400px;
   margin: 0 auto;
+  margin-top: 70px;
   padding: 2rem;
 }
 
 /* Enhanced Dashboard Header */
 .dashboard-header {
-  background: linear-gradient(135deg, #1976D2 0%, #2196F3 100%);
+  background: linear-gradient(135deg, #06292b 0%, #3c3d3d 100%);
   border-radius: var(--border-radius);
   padding: 2.5rem;
   margin-bottom: 2rem;
@@ -911,7 +912,8 @@ require_once '../includes/header.php';
 
 .content-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
+  /* Change to a single column layout */
   gap: 2rem;
   max-width: 1400px;
   margin: 0 auto;
@@ -958,7 +960,7 @@ require_once '../includes/header.php';
 /* Metrics Grid */
 .metrics-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: 1.5rem;
 }
 
@@ -1149,7 +1151,7 @@ require_once '../includes/header.php';
 
 .metrics-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: 1.5rem;
   padding: 1rem;
 }
@@ -1644,7 +1646,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
           }
         });
-  } catch (error) {
+      } catch (error) {
         console.error(`Error initializing ${chart.id}:`, error);
       }
     }
