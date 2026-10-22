@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/includes/config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,7 +65,7 @@
       The page you are looking for might have been removed, had its name changed,
       or is temporarily unavailable.
     </p>
-    <a href="<?php echo SITE_URL . '/'; ?>" class="back-home">Back to Home</a>
+    <a href="<?php echo appUrl(); ?>" class="back-home">Back to Home</a>
   </div>
 </body>
 

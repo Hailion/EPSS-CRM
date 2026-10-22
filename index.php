@@ -4,14 +4,16 @@ require_once 'includes/config.php';
 
 // Redirect to dashboard if logged in
 if (isset($_SESSION['user_id'])) {
-    redirect("dashboard/index.php");
+    redirect(appUrl('dashboard/index.php'));
 }
 
 // Verify login path exists
-$login_path = "auth/login.php";
-if (!file_exists($login_path)) {
+$login_file = __DIR__ . '/auth/login.php';
+if (!file_exists($login_file)) {
     die("Error: Login file not found. Please check system configuration.");
 }
+
+$login_path = appUrl('auth/login.php');
 
 // Attempt to redirect to login page
 redirect($login_path);

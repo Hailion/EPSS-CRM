@@ -12,7 +12,24 @@ define('DB_PASS', '');
 
 // Application configuration
 define('SITE_NAME', 'Credit Management System');
-define('SITE_URL', '');  // Empty string for relative paths
+
+// Derive the public path so the application also works from a subfolder.
+$appRoot = str_replace('\\', '/', realpath(__DIR__ . '/..'));
+$scriptFile = isset($_SERVER['SCRIPT_FILENAME']) ? realpath($_SERVER['SCRIPT_FILENAME']) : false;
+$scriptName = $_SERVER['SCRIPT_NAME'] ?? '';
+
+if ($scriptFile && strpos(str_replace('\\', '/', $scriptFile), $appRoot) === 0 && $scriptName !== '') {
+    $relativeScript = substr(str_replace('\\', '/', $scriptFile), strlen($appRoot));
+    $siteUrl = substr($scriptName, 0, -strlen($relativeScript));
+} else {
+    $siteUrl = '';
+}
+
+define('SITE_URL', rtrim($siteUrl, '/'));
+
+function appUrl($path = '') {
+    return SITE_URL . ($path === '' ? '/' : '/' . ltrim($path, '/'));
+}
 
 // Email configuration
 define('ADMIN_EMAIL', 'admin@creditmm.com');
@@ -87,8 +104,7 @@ function isLoggedIn() {
 // Function to require login
 function requireLogin() {
     if (!isLoggedIn()) {
-        header("Location: auth/login.php");
-        exit();
+        redirect(appUrl('auth/login.php'));
     }
 }
 

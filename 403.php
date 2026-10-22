@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/includes/config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,7 +65,7 @@
       You do not have permission to access this page.
       Please contact your administrator if you believe this is a mistake.
     </p>
-    <a href="<?php echo SITE_URL . '/'; ?>" class="back-home">Back to Home</a>
+    <a href="<?php echo appUrl(); ?>" class="back-home">Back to Home</a>
   </div>
 </body>
 

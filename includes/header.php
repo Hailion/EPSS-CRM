@@ -10,8 +10,8 @@ require_once __DIR__ . '/languages.php';
 // Get user data
 $user = getCurrentUser();
 
-// Define base URL for assets
-$base_url = '../';
+// Public application URL; works from the web root or a subfolder.
+$base_url = appUrl();
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $current_language; ?>" dir="<?php echo $direction; ?>">
@@ -26,7 +26,7 @@ $base_url = '../';
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <!-- Custom CSS -->
-  <link href="../assets/css/style.css" rel="stylesheet">
+  <link href="<?php echo appUrl('assets/css/style.css'); ?>" rel="stylesheet">
   <?php if (isset($additional_css)) echo $additional_css; ?>
 </head>
 

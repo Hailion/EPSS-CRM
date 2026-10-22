@@ -6,6 +6,7 @@
 -- Generation Time: Mar 26, 2025 at 11:41 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
+-- Owner : Haileamlak Gashaw March 28th, 2025
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `credit_management`
+-- Database: `credit_management` 
 --
 
 -- --------------------------------------------------------
@@ -274,10 +275,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `role`, `credit_balance`, `created_at`, `updated_at`) VALUES
 (1, 'admin', 'admin@example.com', '$2y$10$PkUfWGTtSX8PxcMCfuKBdu4ya0VbZFlBXUw2xaN.IGvS9yN9UZtki', 'admin', 0.00, '2025-03-23 21:06:11', '2025-03-26 22:04:12'),
-(2, 'endalk', 'admin@gmail.com', '$2y$10$u8CHfOB9NZNv1QlbXjsl6ulv5dcS5er8tZ/P/fputW82QC9sUjD66', 'user', 0.00, '2025-03-23 22:48:59', '2025-03-24 05:38:53'),
-(3, 'testUser', 'testUser@gmail.com', '$2y$10$oy2H9Au5dA.2yOvXBj8/vegDqXk7eIQD1zx/bc0ajOghnQmF51vDO', 'user', 0.00, '2025-03-24 05:50:17', '2025-03-24 05:50:39');
-
--- --------------------------------------------------------
+(2, 'testUser', 'testUser@gmail.com', '$2y$10$oy2H9Au5dA.2yOvXBj8/vegDqXk7eIQD1zx/bc0ajOghnQmF51vDO', 'user', 0.00, '2025-03-24 05:50:17', '2025-03-24 05:50:39');-- --------------------------------------------------------
 
 --
 -- Table structure for table `user_settings`
@@ -298,9 +296,7 @@ CREATE TABLE `user_settings` (
 --
 
 INSERT INTO `user_settings` (`id`, `user_id`, `theme`, `notifications`, `language`, `created_at`, `updated_at`) VALUES
-(1, 1, 'light', 1, 'en', '2025-03-23 21:55:44', '2025-03-24 18:36:02'),
-(2, 2, 'light', 1, 'en', '2025-03-23 22:49:21', '2025-03-23 22:49:21'),
-(966, 3, 'light', 1, 'en', '2025-03-24 05:50:39', '2025-03-24 05:50:39');
+(1, 1, 'light', 1, 'en', '2025-03-23 21:55:44', '2025-03-24 18:36:02');
 
 --
 -- Indexes for dumped tables

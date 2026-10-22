@@ -1,8 +1,7 @@
 # Enable URL rewriting
 RewriteEngine On
 
-# Set the base directory
-RewriteBase /
+# No fixed RewriteBase: this application may be installed in a subdirectory.
 
 # Prevent directory listing
 Options -Indexes
@@ -29,11 +28,8 @@ Options -Indexes
 # RewriteCond %{HTTPS} off
 # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Handle 404 errors
-ErrorDocument 404 /404.php
-
-# Handle 403 errors
-ErrorDocument 403 /403.php
+# Error documents are handled by Apache. Hard-coded root-relative URLs would
+# break when this application is installed in a subdirectory.
 
 # Set security headers
 <IfModule mod_headers.c>

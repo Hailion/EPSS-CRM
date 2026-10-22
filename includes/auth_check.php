@@ -16,8 +16,7 @@ function isAdmin() {
 function requireAdmin() {
     if (!isAdmin()) {
         $_SESSION['error'] = 'You do not have permission to access this page.';
-        header('Location: dashboard/index.php');
-        exit();
+        redirect(appUrl('dashboard/index.php'));
     }
 }
 
@@ -114,6 +113,5 @@ function canManageNote($noteId = null) {
 // Check if user is logged in
 if (!isLoggedIn()) {
     $_SESSION['error'] = 'Please log in to access this page.';
-    header('Location: auth/login.php');
-    exit();
+    redirect(appUrl('auth/login.php'));
 } 
